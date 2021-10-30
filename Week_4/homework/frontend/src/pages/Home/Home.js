@@ -19,10 +19,20 @@ export default function Home() {
     }
   }
 
+  function removeDoneTask(e){
+    var array = doneTaskList.taskNames;
+    var index = array.indexOf(e);
+    if(index !== -1){
+      array.splice(index, 1);
+      setDoneTaskList({taskNames: array});
+    }
+  }
+
   function taskHandler(newTask){
     setNumTasks(numTasks + 1);
     setTaskList({taskNames: taskList.taskNames.concat(newTask)})
     console.log(taskList);
+    removeDoneTask(newTask);
   }
 
   function doneTaskHandler(newTask){
@@ -42,7 +52,7 @@ export default function Home() {
         {taskList.taskNames.map((taskList) => <li><ListItem textContent = {taskList} handler = {doneTaskHandler}></ListItem></li>)}
       </div>
       <div>
-        {doneTaskList.taskNames.map((doneTaskList) => <li><DoneListItem textContent = {doneTaskList} handler = {doneTaskHandler}></DoneListItem></li>)}
+        {doneTaskList.taskNames.map((doneTaskList) => <li><DoneListItem textContent = {doneTaskList} handler = {taskHandler}></DoneListItem></li>)}
       </div>
     </div>
   );
