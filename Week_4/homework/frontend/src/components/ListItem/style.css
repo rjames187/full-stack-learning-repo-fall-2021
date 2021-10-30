@@ -1,11 +1,19 @@
-.header-container {
-  background-color: #ed7a11;
+.list-item {
+  display: flex;
+  flex-direction: row;
+}
+
+.check-mark-background {
+  width: 20px;
+  height: 20px;
+  background-color: green;
+  border-radius: 20px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-left: 24px;
-  color: white;
+}
+
+.check-mark-image {
   width: 100%;
-  height: 150px;
-  box-shadow: grey 0px 0px 6px 0px;
+  height: 100%;
 }

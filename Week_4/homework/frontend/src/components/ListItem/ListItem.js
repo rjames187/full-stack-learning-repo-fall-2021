@@ -5,11 +5,13 @@ export default function Add(props) {
   
 
   return (
-    <div id="add-container">
-      <input id="add-input"></input>
-      <button id="add-button" onClick = {() =>
-        props.handler(document.querySelector("#add-input").value)
-      }></button>
+    <div className="list-item">
+      {props.textContent}
+      <div className = "check-mark-background">
+        <img src = "/assets/checkmark.svg" className = "check-mark-image" onClick = {() => 
+          props.handler(props.textContent)
+        }></img>
+      </div>
     </div>
   );
 }
