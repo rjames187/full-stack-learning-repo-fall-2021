@@ -1,10 +1,15 @@
 import "./style.css";
 import { useEffect, useState } from "react";
 
-export default function Header() {
+export default function Add(props) {
+  
+
   return (
-    <div className="header-container">
-      <h1 className="title-text">RORY's Todo App</h1>
+    <div id="add-container">
+      <input id="add-input"></input>
+      <button id="add-button" onClick = {() =>
+        props.handler(document.querySelector("#add-input").value)
+      }></button>
     </div>
   );
 }
