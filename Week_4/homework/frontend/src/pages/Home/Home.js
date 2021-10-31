@@ -29,10 +29,15 @@ export default function Home() {
   }
 
   function taskHandler(newTask){
-    setNumTasks(numTasks + 1);
-    setTaskList({taskNames: taskList.taskNames.concat(newTask)})
-    console.log(taskList);
-    removeDoneTask(newTask);
+    var array = taskList.taskNames;
+    var index = array.indexOf(newTask);
+    if(index == -1) {
+      setNumTasks(numTasks + 1);
+      setTaskList({taskNames: taskList.taskNames.concat(newTask)});
+      removeDoneTask(newTask);
+    } else {
+      alert("This task already exists");
+    }
   }
 
   function doneTaskHandler(newTask){
