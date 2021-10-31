@@ -43,16 +43,21 @@ export default function Home() {
 
   return (
     <div>
-      <h1>
-        You have {numTasks} tasks left to do
-      </h1>
-      <Add handler = {taskHandler}>
-      </Add>
-      <div>
-        {taskList.taskNames.map((taskList) => <li><ListItem textContent = {taskList} handler = {doneTaskHandler}></ListItem></li>)}
+      <div id = "upper-body-container">
+        <h3>
+          You have {numTasks} tasks left to do
+        </h3>
+        <Add handler = {taskHandler}></Add>
       </div>
-      <div>
-        {doneTaskList.taskNames.map((doneTaskList) => <li><DoneListItem textContent = {doneTaskList} handler = {taskHandler}></DoneListItem></li>)}
+      <div id="lower-body-container">
+        <h3>To Do</h3>
+        <div>
+          {taskList.taskNames.map((taskList) => <ListItem textContent = {taskList} handler = {doneTaskHandler}></ListItem>)}
+        </div>
+        <h3>Done</h3>
+        <div>
+          {doneTaskList.taskNames.map((doneTaskList) => <DoneListItem textContent = {doneTaskList} handler = {taskHandler}></DoneListItem>)}
+        </div>
       </div>
     </div>
   );

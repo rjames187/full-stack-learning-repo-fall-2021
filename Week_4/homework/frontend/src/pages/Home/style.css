@@ -1,0 +1,9 @@
+#upper-body-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#lower-body-container {
+    display: flex;
+    flex-direction: column;
+}

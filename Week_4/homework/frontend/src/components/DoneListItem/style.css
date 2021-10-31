@@ -1,19 +1,28 @@
-.list-item {
+.done-list-item {
   display: flex;
   flex-direction: row;
+  margin: 5px;
+}
+
+.done-list-text {
+  margin:0;
 }
 
 .undo-mark-background {
   width: 20px;
   height: 20px;
-  background-color: blue;
+  background-color: #0679FF;
   border-radius: 20px;
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin: 0;
+  margin-left: auto;
 }
 
-.check-mark-image {
+.undo-mark-image {
   width: 100%;
   height: 100%;
+  filter: invert(100%);
+  margin: 0;
 }

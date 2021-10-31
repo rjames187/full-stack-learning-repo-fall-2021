@@ -6,7 +6,9 @@ export default function Add(props) {
 
   return (
     <div className="list-item">
-      {props.textContent}
+      <li className = "list-text">
+        {props.textContent}
+      </li>
       <div className = "check-mark-background">
         <img src = "/assets/checkmark.svg" className = "check-mark-image" onClick = {() => 
           props.handler(props.textContent)

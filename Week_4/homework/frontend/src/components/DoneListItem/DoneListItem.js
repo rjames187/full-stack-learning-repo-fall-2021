@@ -5,10 +5,12 @@ export default function Add(props) {
   
 
   return (
-    <div className="list-item">
-      {props.textContent}
+    <div className="done-list-item">
+      <li className = "done-list-text">
+        {props.textContent}
+      </li>
       <div className = "undo-mark-background">
-        <img src = "/assets/arrow-undo.svg" className = "check-mark-image" onClick = {() =>
+        <img src = "/assets/arrow-undo.svg" className = "undo-mark-image" onClick = {() =>
           props.handler(props.textContent)
         }></img>
       </div>
